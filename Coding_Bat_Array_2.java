@@ -153,3 +153,23 @@ public boolean either24(int[] nums) {
   }
   return false;
 }
+
+/* matchUp */
+public int matchUp(int[] nums1, int[] nums2) {
+  int count = 0;
+  for (int i=0; i<nums1.length; i++) {
+  if (Math.abs(nums1[i]-nums2[i])==1 || Math.abs(nums1[i]-nums2[i])==2)
+    count++;
+  }
+  return count;
+}
+
+/* has77 */
+public boolean has77(int[] nums) {
+  for (int i=0; i<nums.length-1; i++) {
+    if (nums[i]==7 && nums[i+1]==7 || (nums[i]==7 && nums[i+2]==7))
+      return true;
+    if (nums[nums.length-1]!=7) return false;
+  }
+  return false;
+}
