@@ -173,3 +173,52 @@ public boolean has77(int[] nums) {
   }
   return false;
 }
+
+/* has12 */
+public boolean has12(int[] nums) {
+  for (int i=0; i<nums.length; i++) {
+    if (nums[i]==1) {
+       for (int j=i; j<nums.length; j++) {
+         if (nums[j]==2) return true;
+       }
+       return false;
+    }
+  }
+  return false;
+}
+
+/* modThree */
+public boolean modThree(int[] nums) {
+  for (int i=0; i<nums.length-2; i++) {
+    if (nums[i]%2==0 && nums[i+1]%2==0 && nums[i+2]%2==0) return true;
+    if (nums[i]%2==1 && nums[i+1]%2==1 && nums[i+2]%2==1) return true;
+  }
+  return false;
+}
+
+/* haveThree */
+public boolean haveThree(int[] nums) {
+  int count = 0;
+  int a = 0;
+  for (int i=0; i<nums.length; i++) {
+    if (nums[i]==3) count++;
+  }
+  if (count==3) {
+    for (int j=0; j<nums.length-1; j++) {
+      if (nums[j]==3 && nums[j+1]==3) a++;
+    }
+    if (a==0) return true;
+    return false;
+  }
+  return false;
+}
+
+/* twoTwo */
+public boolean twoTwo(int[] nums) {
+  boolean stuff = true;
+  for (int i=0; i<nums.length; i++) {
+    if (nums[i]==2) stuff = false;
+    if (i>0 && nums[i]==2 && nums[i-1]==2) stuff = true;
+  }
+  return stuff;
+}
